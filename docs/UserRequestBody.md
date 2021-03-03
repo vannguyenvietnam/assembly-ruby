@@ -35,7 +35,7 @@ instance = AssemblyRuby::UserRequestBody.new(
   first_name: Neol1556506027,
   last_name: Calangi,
   email: neol.calangi+buyer1556506027@promisepay.com,
-  mobile: +21556506027,
+  mobile: 21556506027,
   address_line1: ,
   address_line2: ,
   state: ,
