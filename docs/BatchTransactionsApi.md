@@ -6,6 +6,7 @@ All URIs are relative to *https://test.api.promisepay.com*
 | ------ | ------------ | ----------- |
 | [**list_batch_transactions**](BatchTransactionsApi.md#list_batch_transactions) | **GET** /batch_transactions | List Batch Transactions |
 | [**show_batch_transaction**](BatchTransactionsApi.md#show_batch_transaction) | **GET** /batch_transactions/{id} | Show Batch Transaction |
+| [**show_batch_transaction_items**](BatchTransactionsApi.md#show_batch_transaction_items) | **GET** /batch_transactions/{id}/items | Show Batch Transactions Items |
 
 
 ## list_batch_transactions
@@ -165,6 +166,79 @@ end
 ### Return type
 
 [**SingleBatchTransaction**](SingleBatchTransaction.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## show_batch_transaction_items
+
+> <Items> show_batch_transaction_items(id)
+
+Show Batch Transactions Items
+
+Get all the items relating to a batch transactions ID
+
+### Examples
+
+```ruby
+require 'time'
+require 'assembly_ruby'
+# setup authorization
+AssemblyRuby.configure do |config|
+  # Configure HTTP basic authorization: basicAuth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure OAuth2 access token for authorization: oAuth2ClientCredentials
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = AssemblyRuby::BatchTransactionsApi.new
+id = '90c1418b-f4f4-413e-a4ba-f29c334e7f55' # String | Batch Transactions ID
+
+begin
+  # Show Batch Transactions Items
+  result = api_instance.show_batch_transaction_items(id)
+  p result
+rescue AssemblyRuby::ApiError => e
+  puts "Error when calling BatchTransactionsApi->show_batch_transaction_items: #{e}"
+end
+```
+
+#### Using the show_batch_transaction_items_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Items>, Integer, Hash)> show_batch_transaction_items_with_http_info(id)
+
+```ruby
+begin
+  # Show Batch Transactions Items
+  data, status_code, headers = api_instance.show_batch_transaction_items_with_http_info(id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Items>
+rescue AssemblyRuby::ApiError => e
+  puts "Error when calling BatchTransactionsApi->show_batch_transaction_items_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** | Batch Transactions ID | [default to &#39;90c1418b-f4f4-413e-a4ba-f29c334e7f55&#39;] |
+
+### Return type
+
+[**Items**](Items.md)
 
 ### Authorization
 

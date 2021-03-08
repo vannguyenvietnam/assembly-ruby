@@ -66,4 +66,16 @@ describe 'BatchTransactionsApi' do
     end
   end
 
+  # unit tests for show_batch_transaction_items
+  # Show Batch Transactions Items
+  # Get all the items relating to a batch transactions ID
+  # @param id Batch Transactions ID
+  # @param [Hash] opts the optional parameters
+  # @return [Items]
+  describe 'show_batch_transaction_items test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
 end

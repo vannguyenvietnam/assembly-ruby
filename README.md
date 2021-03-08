@@ -101,6 +101,7 @@ Class | Method | HTTP request | Description
 *AssemblyRuby::BankAccountsApi* | [**verify_penny_amount**](docs/BankAccountsApi.md#verify_penny_amount) | **PATCH** /bank_accounts/{id}/penny_verify | Verify Penny Amount
 *AssemblyRuby::BatchTransactionsApi* | [**list_batch_transactions**](docs/BatchTransactionsApi.md#list_batch_transactions) | **GET** /batch_transactions | List Batch Transactions
 *AssemblyRuby::BatchTransactionsApi* | [**show_batch_transaction**](docs/BatchTransactionsApi.md#show_batch_transaction) | **GET** /batch_transactions/{id} | Show Batch Transaction
+*AssemblyRuby::BatchTransactionsApi* | [**show_batch_transaction_items**](docs/BatchTransactionsApi.md#show_batch_transaction_items) | **GET** /batch_transactions/{id}/items | Show Batch Transactions Items
 *AssemblyRuby::CallbacksApi* | [**create_callback**](docs/CallbacksApi.md#create_callback) | **POST** /callbacks | Create Callback
 *AssemblyRuby::CallbacksApi* | [**delete_callback**](docs/CallbacksApi.md#delete_callback) | **DELETE** /callbacks/{id} | Delete Callback
 *AssemblyRuby::CallbacksApi* | [**list_callback_response**](docs/CallbacksApi.md#list_callback_response) | **GET** /callbacks/{id}/responses | List Callback Responses
