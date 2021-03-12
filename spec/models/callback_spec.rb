@@ -46,7 +46,7 @@ describe AssemblyRuby::Callback do
   describe 'test attribute "object_type"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["Transactions", "Items", "Users", "Batch Transactions", "Disbursements", "Accounts"])
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["transactions", "items", "users", "batch_transactions", "disbursements", "accounts"])
       # validator.allowable_values.each do |value|
       #   expect { instance.object_type = value }.not_to raise_error
       # end

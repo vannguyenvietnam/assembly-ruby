@@ -166,7 +166,7 @@ module AssemblyRuby
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      object_type_validator = EnumAttributeValidator.new('String', ["Transactions", "Items", "Users", "Batch Transactions", "Disbursements", "Accounts"])
+      object_type_validator = EnumAttributeValidator.new('String', ["transactions", "items", "users", "batch_transactions", "disbursements", "accounts"])
       return false unless object_type_validator.valid?(@object_type)
       true
     end
@@ -174,7 +174,7 @@ module AssemblyRuby
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] object_type Object to be assigned
     def object_type=(object_type)
-      validator = EnumAttributeValidator.new('String', ["Transactions", "Items", "Users", "Batch Transactions", "Disbursements", "Accounts"])
+      validator = EnumAttributeValidator.new('String', ["transactions", "items", "users", "batch_transactions", "disbursements", "accounts"])
       unless validator.valid?(object_type)
         fail ArgumentError, "invalid value for \"object_type\", must be one of #{validator.allowable_values}."
       end
