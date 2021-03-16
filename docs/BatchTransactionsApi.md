@@ -179,7 +179,7 @@ end
 
 ## show_batch_transaction_items
 
-> <Items> show_batch_transaction_items(id)
+> <Items> show_batch_transaction_items(id, opts)
 
 Show Batch Transactions Items
 
@@ -202,10 +202,14 @@ end
 
 api_instance = AssemblyRuby::BatchTransactionsApi.new
 id = '90c1418b-f4f4-413e-a4ba-f29c334e7f55' # String | Batch Transactions ID
+opts = {
+  limit: 56, # Integer | Number of records to retrieve. Up to 200.
+  offset: 56 # Integer | Number of records to offset. Required for pagination.
+}
 
 begin
   # Show Batch Transactions Items
-  result = api_instance.show_batch_transaction_items(id)
+  result = api_instance.show_batch_transaction_items(id, opts)
   p result
 rescue AssemblyRuby::ApiError => e
   puts "Error when calling BatchTransactionsApi->show_batch_transaction_items: #{e}"
@@ -216,12 +220,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Items>, Integer, Hash)> show_batch_transaction_items_with_http_info(id)
+> <Array(<Items>, Integer, Hash)> show_batch_transaction_items_with_http_info(id, opts)
 
 ```ruby
 begin
   # Show Batch Transactions Items
-  data, status_code, headers = api_instance.show_batch_transaction_items_with_http_info(id)
+  data, status_code, headers = api_instance.show_batch_transaction_items_with_http_info(id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Items>
@@ -235,6 +239,8 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | Batch Transactions ID | [default to &#39;90c1418b-f4f4-413e-a4ba-f29c334e7f55&#39;] |
+| **limit** | **Integer** | Number of records to retrieve. Up to 200. | [optional][default to 10] |
+| **offset** | **Integer** | Number of records to offset. Required for pagination. | [optional][default to 0] |
 
 ### Return type
 

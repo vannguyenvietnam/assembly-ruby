@@ -75,6 +75,8 @@ describe 'DisbursementsApi' do
   # Get all the items relating to a disbursement ID
   # @param id Disbursement ID
   # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :limit Number of records to retrieve. Up to 200.
+  # @option opts [Integer] :offset Number of records to offset. Required for pagination.
   # @return [Items]
   describe 'show_disbursement_items test' do
     it 'should work' do

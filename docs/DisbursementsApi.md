@@ -240,7 +240,7 @@ end
 
 ## show_disbursement_items
 
-> <Items> show_disbursement_items(id)
+> <Items> show_disbursement_items(id, opts)
 
 Show Disbursement Items
 
@@ -263,10 +263,14 @@ end
 
 api_instance = AssemblyRuby::DisbursementsApi.new
 id = '90c1418b-f4f4-413e-a4ba-f29c334e7f55' # String | Disbursement ID
+opts = {
+  limit: 56, # Integer | Number of records to retrieve. Up to 200.
+  offset: 56 # Integer | Number of records to offset. Required for pagination.
+}
 
 begin
   # Show Disbursement Items
-  result = api_instance.show_disbursement_items(id)
+  result = api_instance.show_disbursement_items(id, opts)
   p result
 rescue AssemblyRuby::ApiError => e
   puts "Error when calling DisbursementsApi->show_disbursement_items: #{e}"
@@ -277,12 +281,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Items>, Integer, Hash)> show_disbursement_items_with_http_info(id)
+> <Array(<Items>, Integer, Hash)> show_disbursement_items_with_http_info(id, opts)
 
 ```ruby
 begin
   # Show Disbursement Items
-  data, status_code, headers = api_instance.show_disbursement_items_with_http_info(id)
+  data, status_code, headers = api_instance.show_disbursement_items_with_http_info(id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Items>
@@ -296,6 +300,8 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | Disbursement ID | [default to &#39;90c1418b-f4f4-413e-a4ba-f29c334e7f55&#39;] |
+| **limit** | **Integer** | Number of records to retrieve. Up to 200. | [optional][default to 10] |
+| **offset** | **Integer** | Number of records to offset. Required for pagination. | [optional][default to 0] |
 
 ### Return type
 

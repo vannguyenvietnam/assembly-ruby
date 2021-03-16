@@ -227,6 +227,8 @@ module AssemblyRuby
     # Get all the items relating to a disbursement ID
     # @param id [String] Disbursement ID
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit Number of records to retrieve. Up to 200. (default to 10)
+    # @option opts [Integer] :offset Number of records to offset. Required for pagination. (default to 0)
     # @return [Items]
     def show_disbursement_items(id, opts = {})
       data, _status_code, _headers = show_disbursement_items_with_http_info(id, opts)
@@ -237,6 +239,8 @@ module AssemblyRuby
     # Get all the items relating to a disbursement ID
     # @param id [String] Disbursement ID
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit Number of records to retrieve. Up to 200.
+    # @option opts [Integer] :offset Number of records to offset. Required for pagination.
     # @return [Array<(Items, Integer, Hash)>] Items data, response status code and response headers
     def show_disbursement_items_with_http_info(id, opts = {})
       if @api_client.config.debugging
@@ -246,11 +250,25 @@ module AssemblyRuby
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling DisbursementsApi.show_disbursement_items"
       end
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 200
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DisbursementsApi.show_disbursement_items, must be smaller than or equal to 200.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DisbursementsApi.show_disbursement_items, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DisbursementsApi.show_disbursement_items, must be greater than or equal to 0.'
+      end
+
       # resource path
       local_var_path = '/disbursements/{id}/items'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
