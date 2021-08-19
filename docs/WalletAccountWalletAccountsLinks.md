@@ -10,6 +10,7 @@
 | **transactions** | **Object** |  | [optional] |
 | **bpay_details** | **Object** |  | [optional] |
 | **npp_details** | **Object** |  | [optional] |
+| **virtual_accounts** | **Object** |  | [optional] |
 
 ## Example
 
@@ -22,7 +23,8 @@ instance = AssemblyRuby::WalletAccountWalletAccountsLinks.new(
   batch_transactions: /wallet_accounts/5c1c6b10-4c56-0137-8cd7-0242ac110002/batch_transactions,
   transactions: /wallet_accounts/5c1c6b10-4c56-0137-8cd7-0242ac110002/transactions,
   bpay_details: /wallet_accounts/5c1c6b10-4c56-0137-8cd7-0242ac110002/bpay_details,
-  npp_details: /wallet_accounts/5c1c6b10-4c56-0137-8cd7-0242ac110002/npp_details
+  npp_details: /wallet_accounts/5c1c6b10-4c56-0137-8cd7-0242ac110002/npp_details,
+  virtual_accounts: /wallet_accounts/5c1c6b10-4c56-0137-8cd7-0242ac110002/virtual_accounts
 )
 ```
 

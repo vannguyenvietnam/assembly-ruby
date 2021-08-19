@@ -141,6 +141,7 @@ Class | Method | HTTP request | Description
 *AssemblyRuby::ItemActionsApi* | [**capture_payment**](docs/ItemActionsApi.md#capture_payment) | **PATCH** /items/{id}/capture_payment | Capture Payment
 *AssemblyRuby::ItemActionsApi* | [**make_payment**](docs/ItemActionsApi.md#make_payment) | **PATCH** /items/{id}/make_payment | Make Payment
 *AssemblyRuby::ItemActionsApi* | [**refund**](docs/ItemActionsApi.md#refund) | **PATCH** /items/{id}/refund | Refund
+*AssemblyRuby::ItemActionsApi* | [**release_payment**](docs/ItemActionsApi.md#release_payment) | **PATCH** /items/{id}/release_payment | Release Payment (Deprecated - Do Not Use)
 *AssemblyRuby::ItemActionsApi* | [**void_payment**](docs/ItemActionsApi.md#void_payment) | **PATCH** /items/{id}/void_payment | Void Payment
 *AssemblyRuby::ItemsApi* | [**create_item**](docs/ItemsApi.md#create_item) | **POST** /items | Create Item
 *AssemblyRuby::ItemsApi* | [**delete_item**](docs/ItemsApi.md#delete_item) | **DELETE** /items/{id} | Delete Item
@@ -176,7 +177,6 @@ Class | Method | HTTP request | Description
 *AssemblyRuby::UsersApi* | [**update_user**](docs/UsersApi.md#update_user) | **PATCH** /users/{id} | Update User
 *AssemblyRuby::UsersApi* | [**verify_user**](docs/UsersApi.md#verify_user) | **PATCH** /users/{id}/identity_verified | Verify User (Prelive Only)
 *AssemblyRuby::WalletAccountsApi* | [**bill_payment**](docs/WalletAccountsApi.md#bill_payment) | **POST** /wallet_accounts/{id}/bill_payment | Pay a Bill
-*AssemblyRuby::WalletAccountsApi* | [**deposit_funds**](docs/WalletAccountsApi.md#deposit_funds) | **POST** /wallet_accounts/{id}/deposit | Deposit Funds
 *AssemblyRuby::WalletAccountsApi* | [**show_wallet_account**](docs/WalletAccountsApi.md#show_wallet_account) | **GET** /wallet_accounts/{id} | Show Wallet Account
 *AssemblyRuby::WalletAccountsApi* | [**show_wallet_account_nbpay_details**](docs/WalletAccountsApi.md#show_wallet_account_nbpay_details) | **GET** /wallet_accounts/{id}/bpay_details | Show Wallet Account BPAY Details
 *AssemblyRuby::WalletAccountsApi* | [**show_wallet_account_npp_details**](docs/WalletAccountsApi.md#show_wallet_account_npp_details) | **GET** /wallet_accounts/{id}/npp_details | Show Wallet Account NPP Details
@@ -228,6 +228,7 @@ Class | Method | HTTP request | Description
  - [AssemblyRuby::CardAccountDeletion](docs/CardAccountDeletion.md)
  - [AssemblyRuby::CardAccountIdRequestBody](docs/CardAccountIdRequestBody.md)
  - [AssemblyRuby::CardAccountRequestBody](docs/CardAccountRequestBody.md)
+ - [AssemblyRuby::CardAccountVerifyRequestBody](docs/CardAccountVerifyRequestBody.md)
  - [AssemblyRuby::Charge](docs/Charge.md)
  - [AssemblyRuby::ChargeLinks](docs/ChargeLinks.md)
  - [AssemblyRuby::ChargeRequestBody](docs/ChargeRequestBody.md)
@@ -270,6 +271,7 @@ Class | Method | HTTP request | Description
  - [AssemblyRuby::MarketplaceMarketplacesRelated](docs/MarketplaceMarketplacesRelated.md)
  - [AssemblyRuby::PennyVerifyRequestBody](docs/PennyVerifyRequestBody.md)
  - [AssemblyRuby::RefundRequestBody](docs/RefundRequestBody.md)
+ - [AssemblyRuby::ReleasePaymentRequestBody](docs/ReleasePaymentRequestBody.md)
  - [AssemblyRuby::SimpleCompanies](docs/SimpleCompanies.md)
  - [AssemblyRuby::SimpleCompany](docs/SimpleCompany.md)
  - [AssemblyRuby::SingleBatchTransaction](docs/SingleBatchTransaction.md)

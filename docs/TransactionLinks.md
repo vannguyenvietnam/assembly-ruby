@@ -14,6 +14,7 @@
 | **items** | **String** |  | [optional] |
 | **marketplaces** | **String** |  | [optional] |
 | **npp_payin_transaction_detail** | **String** |  | [optional] |
+| **supplementary_data** | **String** |  | [optional] |
 
 ## Example
 
@@ -30,7 +31,8 @@ instance = AssemblyRuby::TransactionLinks.new(
   bank_accounts: /transactions/ea36e48a-4638-4d1a-a345-e1a0a584df8b/bank_accounts,
   items: /transactions/ea36e48a-4638-4d1a-a345-e1a0a584df8b/items,
   marketplaces: /transactions/ea36e48a-4638-4d1a-a345-e1a0a584df8b/marketplaces,
-  npp_payin_transaction_detail: null
+  npp_payin_transaction_detail: null,
+  supplementary_data: /transactions/ea36e48a-4638-4d1a-a345-e1a0a584df8b/supplementary_data
 )
 ```
 

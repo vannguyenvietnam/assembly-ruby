@@ -33,7 +33,7 @@ AssemblyRuby.configure do |config|
 end
 
 api_instance = AssemblyRuby::FeesApi.new
-fee_request_body = AssemblyRuby::FeeRequestBody.new({name: 'Seller Success Fee', fee_type_id: '1', amount: '200'}) # FeeRequestBody | 
+fee_request_body = AssemblyRuby::FeeRequestBody.new({name: 'Seller Success Fee', fee_type_id: '1', amount: 200}) # FeeRequestBody | 
 
 begin
   # Create fee

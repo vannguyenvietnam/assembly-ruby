@@ -4,9 +4,9 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | **String** |  | [optional] |
-| **created_at** | **Time** |  | [optional] |
-| **updated_at** | **Time** |  | [optional] |
+| **id** | **String** |  |  |
+| **created_at** | **Time** |  |  |
+| **updated_at** | **Time** |  |  |
 | **status** | **String** |  | [optional] |
 | **uuid** | **String** |  | [optional] |
 | **disbursement_bank** | **String** |  | [optional] |
@@ -38,7 +38,7 @@
 | **from_user_name** | **String** |  | [optional] |
 | **from_user_id** | **String** |  | [optional] |
 | **refund_state** | **String** |  | [optional] |
-| **amount** | **Integer** |  | [optional] |
+| **amount** | **Integer** |  |  |
 | **currency** | **String** |  | [optional] |
 | **company** | **String** |  | [optional] |
 | **address_line1** | **String** |  | [optional] |

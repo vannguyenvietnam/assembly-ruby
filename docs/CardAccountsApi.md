@@ -305,7 +305,7 @@ end
 
 ## verify_card
 
-> <CardAccount> verify_card(id)
+> <CardAccount> verify_card(id, opts)
 
 Verify Card
 
@@ -328,10 +328,13 @@ end
 
 api_instance = AssemblyRuby::CardAccountsApi.new
 id = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee' # String | Card account ID
+opts = {
+  card_account_verify_request_body: AssemblyRuby::CardAccountVerifyRequestBody.new # CardAccountVerifyRequestBody | 
+}
 
 begin
   # Verify Card
-  result = api_instance.verify_card(id)
+  result = api_instance.verify_card(id, opts)
   p result
 rescue AssemblyRuby::ApiError => e
   puts "Error when calling CardAccountsApi->verify_card: #{e}"
@@ -342,12 +345,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CardAccount>, Integer, Hash)> verify_card_with_http_info(id)
+> <Array(<CardAccount>, Integer, Hash)> verify_card_with_http_info(id, opts)
 
 ```ruby
 begin
   # Verify Card
-  data, status_code, headers = api_instance.verify_card_with_http_info(id)
+  data, status_code, headers = api_instance.verify_card_with_http_info(id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CardAccount>
@@ -361,6 +364,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | Card account ID | [default to &#39;aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee&#39;] |
+| **card_account_verify_request_body** | [**CardAccountVerifyRequestBody**](CardAccountVerifyRequestBody.md) |  | [optional] |
 
 ### Return type
 
@@ -372,6 +376,6 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 

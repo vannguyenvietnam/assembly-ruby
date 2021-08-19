@@ -4,14 +4,14 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | **String** |  | [optional] |
-| **name** | **String** |  | [optional] |
+| **id** | **String** |  |  |
+| **name** | **String** |  |  |
 | **description** | **String** |  | [optional] |
 | **created_at** | **Time** |  | [optional] |
 | **updated_at** | **Time** |  | [optional] |
 | **state** | **String** |  | [optional] |
 | **status** | **Integer** |  | [optional] |
-| **amount** | **Integer** |  | [optional] |
+| **amount** | **Integer** |  |  |
 | **payment_type_id** | **Integer** |  | [optional] |
 | **currency** | **String** |  | [optional] |
 | **buyer_name** | **String** |  | [optional] |

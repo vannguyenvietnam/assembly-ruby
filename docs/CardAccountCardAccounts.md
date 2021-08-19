@@ -9,6 +9,7 @@
 | **updated_at** | **Time** |  | [optional] |
 | **id** | **String** |  | [optional] |
 | **currency** | **String** |  | [optional] |
+| **cvv_verified** | **Boolean** |  | [optional] |
 | **verification_status** | **String** |  | [optional] |
 | **card** | [**CardAccountCardAccountsCard**](CardAccountCardAccountsCard.md) |  | [optional] |
 | **links** | [**CardAccountCardAccountsLinks**](CardAccountCardAccountsLinks.md) |  | [optional] |
@@ -24,6 +25,7 @@ instance = AssemblyRuby::CardAccountCardAccounts.new(
   updated_at: null,
   id: 46deb476-c1a6-41eb-8eb7-26a695bbe5bc,
   currency: AUD,
+  cvv_verified: true,
   verification_status: not_verified,
   card: null,
   links: null

@@ -9,6 +9,7 @@ All URIs are relative to *https://test.api.promisepay.com*
 | [**capture_payment**](ItemActionsApi.md#capture_payment) | **PATCH** /items/{id}/capture_payment | Capture Payment |
 | [**make_payment**](ItemActionsApi.md#make_payment) | **PATCH** /items/{id}/make_payment | Make Payment |
 | [**refund**](ItemActionsApi.md#refund) | **PATCH** /items/{id}/refund | Refund |
+| [**release_payment**](ItemActionsApi.md#release_payment) | **PATCH** /items/{id}/release_payment | Release Payment (Deprecated - Do Not Use) |
 | [**void_payment**](ItemActionsApi.md#void_payment) | **PATCH** /items/{id}/void_payment | Void Payment |
 
 
@@ -368,6 +369,81 @@ end
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | Marketplace / Platform item ID to be refunded | [default to &#39;7190770-1-2908&#39;] |
 | **refund_request_body** | [**RefundRequestBody**](RefundRequestBody.md) |  |  |
+
+### Return type
+
+[**SingleItem**](SingleItem.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## release_payment
+
+> <SingleItem> release_payment(id, release_payment_request_body)
+
+Release Payment (Deprecated - Do Not Use)
+
+Included for legacy purposes for existing customers that use Escrow payments which are no longer supported for new flows/customers. Release funds held in escrow from an **Item** with an **Escrow** or **Escrow Partial Release** payment type.  This will transition the **Item** state to `completed`.
+
+### Examples
+
+```ruby
+require 'time'
+require 'assembly_ruby'
+# setup authorization
+AssemblyRuby.configure do |config|
+  # Configure HTTP basic authorization: basicAuth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure OAuth2 access token for authorization: oAuth2ClientCredentials
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = AssemblyRuby::ItemActionsApi.new
+id = '7190770-1-2908' # String | Marketplace / Platform item ID
+release_payment_request_body = AssemblyRuby::ReleasePaymentRequestBody.new # ReleasePaymentRequestBody | 
+
+begin
+  # Release Payment (Deprecated - Do Not Use)
+  result = api_instance.release_payment(id, release_payment_request_body)
+  p result
+rescue AssemblyRuby::ApiError => e
+  puts "Error when calling ItemActionsApi->release_payment: #{e}"
+end
+```
+
+#### Using the release_payment_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SingleItem>, Integer, Hash)> release_payment_with_http_info(id, release_payment_request_body)
+
+```ruby
+begin
+  # Release Payment (Deprecated - Do Not Use)
+  data, status_code, headers = api_instance.release_payment_with_http_info(id, release_payment_request_body)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SingleItem>
+rescue AssemblyRuby::ApiError => e
+  puts "Error when calling ItemActionsApi->release_payment_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** | Marketplace / Platform item ID | [default to &#39;7190770-1-2908&#39;] |
+| **release_payment_request_body** | [**ReleasePaymentRequestBody**](ReleasePaymentRequestBody.md) |  |  |
 
 ### Return type
 

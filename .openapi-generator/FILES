@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .rspec
 .rubocop.yml
 .travis.yml
@@ -55,6 +54,7 @@ docs/CardAccountCardAccountsLinks.md
 docs/CardAccountDeletion.md
 docs/CardAccountIdRequestBody.md
 docs/CardAccountRequestBody.md
+docs/CardAccountVerifyRequestBody.md
 docs/CardAccountsApi.md
 docs/Charge.md
 docs/ChargeLinks.md
@@ -106,6 +106,7 @@ docs/MarketplaceMarketplacesRelated.md
 docs/MarketplacesApi.md
 docs/PennyVerifyRequestBody.md
 docs/RefundRequestBody.md
+docs/ReleasePaymentRequestBody.md
 docs/SimpleCompanies.md
 docs/SimpleCompany.md
 docs/SingleBatchTransaction.md
@@ -185,7 +186,6 @@ lib/assembly_ruby/api/wallet_accounts_api.rb
 lib/assembly_ruby/api_client.rb
 lib/assembly_ruby/api_error.rb
 lib/assembly_ruby/configuration.rb
-lib/assembly_ruby/configuration.rb
 lib/assembly_ruby/models/account.rb
 lib/assembly_ruby/models/account_id_request_body.rb
 lib/assembly_ruby/models/address.rb
@@ -228,6 +228,7 @@ lib/assembly_ruby/models/card_account_card_accounts_links.rb
 lib/assembly_ruby/models/card_account_deletion.rb
 lib/assembly_ruby/models/card_account_id_request_body.rb
 lib/assembly_ruby/models/card_account_request_body.rb
+lib/assembly_ruby/models/card_account_verify_request_body.rb
 lib/assembly_ruby/models/charge.rb
 lib/assembly_ruby/models/charge_links.rb
 lib/assembly_ruby/models/charge_request_body.rb
@@ -270,6 +271,7 @@ lib/assembly_ruby/models/marketplace_marketplaces_links.rb
 lib/assembly_ruby/models/marketplace_marketplaces_related.rb
 lib/assembly_ruby/models/penny_verify_request_body.rb
 lib/assembly_ruby/models/refund_request_body.rb
+lib/assembly_ruby/models/release_payment_request_body.rb
 lib/assembly_ruby/models/simple_companies.rb
 lib/assembly_ruby/models/simple_company.rb
 lib/assembly_ruby/models/single_batch_transaction.rb
@@ -384,6 +386,7 @@ spec/models/card_account_deletion_spec.rb
 spec/models/card_account_id_request_body_spec.rb
 spec/models/card_account_request_body_spec.rb
 spec/models/card_account_spec.rb
+spec/models/card_account_verify_request_body_spec.rb
 spec/models/charge_links_spec.rb
 spec/models/charge_request_body_spec.rb
 spec/models/charge_spec.rb
@@ -426,6 +429,7 @@ spec/models/marketplace_marketplaces_spec.rb
 spec/models/marketplace_spec.rb
 spec/models/penny_verify_request_body_spec.rb
 spec/models/refund_request_body_spec.rb
+spec/models/release_payment_request_body_spec.rb
 spec/models/simple_companies_spec.rb
 spec/models/simple_company_spec.rb
 spec/models/single_batch_transaction_spec.rb

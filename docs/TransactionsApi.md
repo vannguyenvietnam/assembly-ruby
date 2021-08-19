@@ -19,7 +19,7 @@ All URIs are relative to *https://test.api.promisepay.com*
 
 List Transactions
 
-Retrieve an ordered and paginated list of **Transactions**.
+Retrieve an ordered and paginated list of **Transactions**. Note: `created_before` and `created_after` range can not be greater than 31 days
 
 ### Examples
 
@@ -45,7 +45,9 @@ opts = {
   transaction_type: 'payment', # String | The type of transaction. Options for querying are: payment, refund, disbursement, fee, deposit, withdrawal. For returned values please refer here: [Enumeration Values](https://developer.assemblypayments.com/docs/enumeration-values) for the full list
   transaction_type_method: 'direct_debit', # String | The method the transaction was carried out with. Options for querying are: direct_debit, credit_card, npp, bpay, wire_transfer, wallet_account_transfer, direct_credit, misc. For returned values please refer here: [Enumeration Values](https://developer.assemblypayments.com/docs/enumeration-values) for the full list
   direction: 'debit', # String | Direction of the transaction.
-  user_id: 'user_id_example' # String | User ID.
+  user_id: 'user_id_example', # String | User ID.
+  created_before: 'created_before_example', # String | Date and time in ISO 8601 format the item(s) were created before (e.g. 2020-02-27T23:54:59Z)
+  created_after: 'created_after_example' # String | Date and time in ISO 8601 format the item(s) were created after (e.g. 2020-02-27T23:54:59Z)
 }
 
 begin
@@ -87,6 +89,8 @@ end
 | **transaction_type_method** | **String** | The method the transaction was carried out with. Options for querying are: direct_debit, credit_card, npp, bpay, wire_transfer, wallet_account_transfer, direct_credit, misc. For returned values please refer here: [Enumeration Values](https://developer.assemblypayments.com/docs/enumeration-values) for the full list | [optional] |
 | **direction** | **String** | Direction of the transaction. | [optional] |
 | **user_id** | **String** | User ID. | [optional] |
+| **created_before** | **String** | Date and time in ISO 8601 format the item(s) were created before (e.g. 2020-02-27T23:54:59Z) | [optional] |
+| **created_after** | **String** | Date and time in ISO 8601 format the item(s) were created after (e.g. 2020-02-27T23:54:59Z) | [optional] |
 
 ### Return type
 

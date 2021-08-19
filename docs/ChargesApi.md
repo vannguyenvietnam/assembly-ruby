@@ -35,7 +35,7 @@ AssemblyRuby.configure do |config|
 end
 
 api_instance = AssemblyRuby::ChargesApi.new
-charge_request_body = AssemblyRuby::ChargeRequestBody.new({account_id: '5ef44050-4c56-0137-abdf-0242ac110002', amount: '1000', email: 'buyer-1556505753@promisepay.com', zip: 3000, country: 'AUS'}) # ChargeRequestBody | 
+charge_request_body = AssemblyRuby::ChargeRequestBody.new({account_id: '5ef44050-4c56-0137-abdf-0242ac110002', amount: 1000, email: 'buyer-1556505753@promisepay.com', zip: 3000, country: 'AUS'}) # ChargeRequestBody | 
 
 begin
   # Create Charge

@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **account_id** | **String** | Bank Account or Card Account ID | [default to &#39;5ef44050-4c56-0137-abdf-0242ac110002&#39;] |
 | **name** | **String** | Description of the Charge being created. | [optional] |
-| **amount** | **String** | The cost being charged in cents. | [default to &#39;1000&#39;] |
+| **amount** | **Integer** | The cost being charged in cents. |  |
 | **email** | **String** | Email of the user associated with the account being charged. | [default to &#39;buyer-1556505753@promisepay.com&#39;] |
 | **zip** | **Integer** | Postcode |  |
 | **country** | **String** | [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3#Officially_assigned_code_elements) country code of the User being charged. | [default to &#39;AUS&#39;] |
@@ -17,6 +17,7 @@
 | **device_id** | **String** | Device Information for the device initiating the payment | [optional] |
 | **ip_address** | **String** | IP Information for the device initiating the payment | [optional] |
 | **custom_descriptor** | **String** | When &#x60;custom_descriptors&#x60; are enabled, this is the information to appear on credit card and direct debit statements. | [optional] |
+| **cvv** | **String** | CVV / CVC | [optional] |
 
 ## Example
 
@@ -36,7 +37,8 @@ instance = AssemblyRuby::ChargeRequestBody.new(
   retain_account: false,
   device_id: ,
   ip_address: ,
-  custom_descriptor: 
+  custom_descriptor: ,
+  cvv: 
 )
 ```
 

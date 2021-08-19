@@ -33,7 +33,7 @@ AssemblyRuby.configure do |config|
 end
 
 api_instance = AssemblyRuby::DirectDebitAuthoritiesApi.new
-direct_debit_authority_request_body = AssemblyRuby::DirectDebitAuthorityRequestBody.new({account_id: '7fac6c60-6f5b-0138-eb9a-0a58a9feac03', amount: '100'}) # DirectDebitAuthorityRequestBody | 
+direct_debit_authority_request_body = AssemblyRuby::DirectDebitAuthorityRequestBody.new({account_id: '7fac6c60-6f5b-0138-eb9a-0a58a9feac03', amount: 100}) # DirectDebitAuthorityRequestBody | 
 
 begin
   # Create Direct Debit Authority

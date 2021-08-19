@@ -5,7 +5,6 @@ All URIs are relative to *https://test.api.promisepay.com*
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
 | [**bill_payment**](WalletAccountsApi.md#bill_payment) | **POST** /wallet_accounts/{id}/bill_payment | Pay a Bill |
-| [**deposit_funds**](WalletAccountsApi.md#deposit_funds) | **POST** /wallet_accounts/{id}/deposit | Deposit Funds |
 | [**show_wallet_account**](WalletAccountsApi.md#show_wallet_account) | **GET** /wallet_accounts/{id} | Show Wallet Account |
 | [**show_wallet_account_nbpay_details**](WalletAccountsApi.md#show_wallet_account_nbpay_details) | **GET** /wallet_accounts/{id}/bpay_details | Show Wallet Account BPAY Details |
 | [**show_wallet_account_npp_details**](WalletAccountsApi.md#show_wallet_account_npp_details) | **GET** /wallet_accounts/{id}/npp_details | Show Wallet Account NPP Details |
@@ -73,81 +72,6 @@ end
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | Account ID | [default to &#39;901d8cd0-6af3-0138-967d-0a58a9feac04&#39;] |
 | **bill_payment_request_body** | [**BillPaymentRequestBody**](BillPaymentRequestBody.md) |  |  |
-
-### Return type
-
-[**SingleDisbursement**](SingleDisbursement.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## deposit_funds
-
-> <SingleDisbursement> deposit_funds(id, deposit_request_body)
-
-Deposit Funds
-
-Deposit funds to a **Wallet Account** from a specified payment account.
-
-### Examples
-
-```ruby
-require 'time'
-require 'assembly_ruby'
-# setup authorization
-AssemblyRuby.configure do |config|
-  # Configure HTTP basic authorization: basicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-
-  # Configure OAuth2 access token for authorization: oAuth2ClientCredentials
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
-
-api_instance = AssemblyRuby::WalletAccountsApi.new
-id = 'bd6e9c20-73f1-0138-fb91-0a58a9feac09' # String | Wallent account ID
-deposit_request_body = AssemblyRuby::DepositRequestBody.new({account_id: 'c1824ad0-73f1-0138-3700-0a58a9feac09', amount: 100}) # DepositRequestBody | 
-
-begin
-  # Deposit Funds
-  result = api_instance.deposit_funds(id, deposit_request_body)
-  p result
-rescue AssemblyRuby::ApiError => e
-  puts "Error when calling WalletAccountsApi->deposit_funds: #{e}"
-end
-```
-
-#### Using the deposit_funds_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<SingleDisbursement>, Integer, Hash)> deposit_funds_with_http_info(id, deposit_request_body)
-
-```ruby
-begin
-  # Deposit Funds
-  data, status_code, headers = api_instance.deposit_funds_with_http_info(id, deposit_request_body)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <SingleDisbursement>
-rescue AssemblyRuby::ApiError => e
-  puts "Error when calling WalletAccountsApi->deposit_funds_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **String** | Wallent account ID | [default to &#39;bd6e9c20-73f1-0138-fb91-0a58a9feac09&#39;] |
-| **deposit_request_body** | [**DepositRequestBody**](DepositRequestBody.md) |  |  |
 
 ### Return type
 

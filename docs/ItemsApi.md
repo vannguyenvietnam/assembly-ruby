@@ -42,7 +42,7 @@ AssemblyRuby.configure do |config|
 end
 
 api_instance = AssemblyRuby::ItemsApi.new
-item_request_body = AssemblyRuby::ItemRequestBody.new({id: '7190770-1-2908', name: 'Item 7190770-1-2908', amount: '102', payment_type: 2, buyer_id: 'buyer-719013950014', seller_id: 'seller-71718579'}) # ItemRequestBody | 
+item_request_body = AssemblyRuby::ItemRequestBody.new({id: '7190770-1-2908', name: 'Item 7190770-1-2908', amount: 102, payment_type: 2, buyer_id: 'buyer-719013950014', seller_id: 'seller-71718579'}) # ItemRequestBody | 
 
 begin
   # Create Item
