@@ -469,9 +469,9 @@ module AssemblyRuby
     def valid?
       return false if @id.nil?
       return false if @name.nil?
-      state_validator = EnumAttributeValidator.new('String', ["pending", "payment_required", "wire_pending", "payment_pending", "payment_held", "payment_authorized", "voided", "fraud_hold", "payment_deposited", "work_completed", "problem_flagged", "problem_resolve_requested", "problem_escalated", "completed", "cancelled", "refunded", "refund_pending", "refund_flagged", "off_platform_refunded", "partial_completed", "partial_paid", "off_platform_chargedback"])
+      state_validator = EnumAttributeValidator.new('String', ["pending", "payment_required", "wire_pending", "payment_pending", "payment_held", "payment_authorized", "void_pending", "voided", "fraud_hold", "payment_deposited", "work_completed", "problem_flagged", "problem_resolve_requested", "problem_escalated", "completed", "cancelled", "refunded", "refund_pending", "refund_flagged", "off_platform_refunded", "partial_completed", "partial_paid", "off_platform_chargedback"])
       return false unless state_validator.valid?(@state)
-      status_validator = EnumAttributeValidator.new('Integer', [22000, 22100, 22110, 22150, 22175, 22180, 22195, 22190, 22200, 22300, 22400, 22410, 22420, 22500, 22575, 22600, 22610, 22650, 22670, 22700, 22800, 22680])
+      status_validator = EnumAttributeValidator.new('Integer', [22000, 22100, 22110, 22150, 22175, 22180, 22185, 22195, 22190, 22200, 22300, 22400, 22410, 22420, 22500, 22575, 22600, 22610, 22650, 22670, 22700, 22800, 22680])
       return false unless status_validator.valid?(@status)
       return false if @amount.nil?
       true
@@ -480,7 +480,7 @@ module AssemblyRuby
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] state Object to be assigned
     def state=(state)
-      validator = EnumAttributeValidator.new('String', ["pending", "payment_required", "wire_pending", "payment_pending", "payment_held", "payment_authorized", "voided", "fraud_hold", "payment_deposited", "work_completed", "problem_flagged", "problem_resolve_requested", "problem_escalated", "completed", "cancelled", "refunded", "refund_pending", "refund_flagged", "off_platform_refunded", "partial_completed", "partial_paid", "off_platform_chargedback"])
+      validator = EnumAttributeValidator.new('String', ["pending", "payment_required", "wire_pending", "payment_pending", "payment_held", "payment_authorized", "void_pending", "voided", "fraud_hold", "payment_deposited", "work_completed", "problem_flagged", "problem_resolve_requested", "problem_escalated", "completed", "cancelled", "refunded", "refund_pending", "refund_flagged", "off_platform_refunded", "partial_completed", "partial_paid", "off_platform_chargedback"])
       unless validator.valid?(state)
         fail ArgumentError, "invalid value for \"state\", must be one of #{validator.allowable_values}."
       end
@@ -490,7 +490,7 @@ module AssemblyRuby
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] status Object to be assigned
     def status=(status)
-      validator = EnumAttributeValidator.new('Integer', [22000, 22100, 22110, 22150, 22175, 22180, 22195, 22190, 22200, 22300, 22400, 22410, 22420, 22500, 22575, 22600, 22610, 22650, 22670, 22700, 22800, 22680])
+      validator = EnumAttributeValidator.new('Integer', [22000, 22100, 22110, 22150, 22175, 22180, 22185, 22195, 22190, 22200, 22300, 22400, 22410, 22420, 22500, 22575, 22600, 22610, 22650, 22670, 22700, 22800, 22680])
       unless validator.valid?(status)
         fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
       end

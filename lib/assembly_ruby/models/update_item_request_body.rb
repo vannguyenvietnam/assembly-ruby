@@ -33,6 +33,9 @@ module AssemblyRuby
     # When `custom_descriptors` are enabled, this is the information to appear on credit card and direct debit statements.
     attr_accessor :custom_descriptor
 
+    # A comma separated list of fee IDs to apply
+    attr_accessor :fee_ids
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -41,7 +44,8 @@ module AssemblyRuby
         :'buyer_id' => :'buyer_id',
         :'seller_id' => :'seller_id',
         :'description' => :'description',
-        :'custom_descriptor' => :'custom_descriptor'
+        :'custom_descriptor' => :'custom_descriptor',
+        :'fee_ids' => :'fee_ids'
       }
     end
 
@@ -58,7 +62,8 @@ module AssemblyRuby
         :'buyer_id' => :'String',
         :'seller_id' => :'String',
         :'description' => :'String',
-        :'custom_descriptor' => :'String'
+        :'custom_descriptor' => :'String',
+        :'fee_ids' => :'String'
       }
     end
 
@@ -106,6 +111,10 @@ module AssemblyRuby
       if attributes.key?(:'custom_descriptor')
         self.custom_descriptor = attributes[:'custom_descriptor']
       end
+
+      if attributes.key?(:'fee_ids')
+        self.fee_ids = attributes[:'fee_ids']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -131,7 +140,8 @@ module AssemblyRuby
           buyer_id == o.buyer_id &&
           seller_id == o.seller_id &&
           description == o.description &&
-          custom_descriptor == o.custom_descriptor
+          custom_descriptor == o.custom_descriptor &&
+          fee_ids == o.fee_ids
     end
 
     # @see the `==` method
@@ -143,7 +153,7 @@ module AssemblyRuby
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [amount, name, buyer_id, seller_id, description, custom_descriptor].hash
+      [amount, name, buyer_id, seller_id, description, custom_descriptor, fee_ids].hash
     end
 
     # Builds the object from hash
