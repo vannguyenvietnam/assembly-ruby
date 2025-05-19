@@ -221,6 +221,7 @@ Class | Method | HTTP request | Description
  - [AssemblyRuby::CallbackResponsePayload](docs/CallbackResponsePayload.md)
  - [AssemblyRuby::CallbackResponseResponse](docs/CallbackResponseResponse.md)
  - [AssemblyRuby::Callbacks](docs/Callbacks.md)
+ - [AssemblyRuby::CapturePaymentRequestBody](docs/CapturePaymentRequestBody.md)
  - [AssemblyRuby::CardAccount](docs/CardAccount.md)
  - [AssemblyRuby::CardAccountCardAccounts](docs/CardAccountCardAccounts.md)
  - [AssemblyRuby::CardAccountCardAccountsCard](docs/CardAccountCardAccountsCard.md)

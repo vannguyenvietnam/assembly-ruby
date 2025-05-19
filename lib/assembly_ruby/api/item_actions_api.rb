@@ -156,25 +156,31 @@ module AssemblyRuby
     # Capture Payment
     # Where pre-authentication is enabled on a platform, completes a credit card payment for an item whose payment is authorized. This call is used with the Authorize Payment call. 
     # @param id [String] Marketplace / Platform item ID
+    # @param capture_payment_request_body [CapturePaymentRequestBody] 
     # @param [Hash] opts the optional parameters
     # @return [SingleItem]
-    def capture_payment(id, opts = {})
-      data, _status_code, _headers = capture_payment_with_http_info(id, opts)
+    def capture_payment(id, capture_payment_request_body, opts = {})
+      data, _status_code, _headers = capture_payment_with_http_info(id, capture_payment_request_body, opts)
       data
     end
 
     # Capture Payment
     # Where pre-authentication is enabled on a platform, completes a credit card payment for an item whose payment is authorized. This call is used with the Authorize Payment call. 
     # @param id [String] Marketplace / Platform item ID
+    # @param capture_payment_request_body [CapturePaymentRequestBody] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(SingleItem, Integer, Hash)>] SingleItem data, response status code and response headers
-    def capture_payment_with_http_info(id, opts = {})
+    def capture_payment_with_http_info(id, capture_payment_request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ItemActionsApi.capture_payment ...'
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling ItemActionsApi.capture_payment"
+      end
+      # verify the required parameter 'capture_payment_request_body' is set
+      if @api_client.config.client_side_validation && capture_payment_request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'capture_payment_request_body' when calling ItemActionsApi.capture_payment"
       end
       # resource path
       local_var_path = '/items/{id}/capture_payment'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -186,12 +192,14 @@ module AssemblyRuby
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(capture_payment_request_body)
 
       # return_type
       return_type = opts[:debug_return_type] || 'SingleItem'

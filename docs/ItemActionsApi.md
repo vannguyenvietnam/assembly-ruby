@@ -163,7 +163,7 @@ end
 
 ## capture_payment
 
-> <SingleItem> capture_payment(id)
+> <SingleItem> capture_payment(id, capture_payment_request_body)
 
 Capture Payment
 
@@ -186,10 +186,11 @@ end
 
 api_instance = AssemblyRuby::ItemActionsApi.new
 id = '7190770-1-2908' # String | Marketplace / Platform item ID
+capture_payment_request_body = AssemblyRuby::CapturePaymentRequestBody.new # CapturePaymentRequestBody | 
 
 begin
   # Capture Payment
-  result = api_instance.capture_payment(id)
+  result = api_instance.capture_payment(id, capture_payment_request_body)
   p result
 rescue AssemblyRuby::ApiError => e
   puts "Error when calling ItemActionsApi->capture_payment: #{e}"
@@ -200,12 +201,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SingleItem>, Integer, Hash)> capture_payment_with_http_info(id)
+> <Array(<SingleItem>, Integer, Hash)> capture_payment_with_http_info(id, capture_payment_request_body)
 
 ```ruby
 begin
   # Capture Payment
-  data, status_code, headers = api_instance.capture_payment_with_http_info(id)
+  data, status_code, headers = api_instance.capture_payment_with_http_info(id, capture_payment_request_body)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleItem>
@@ -219,6 +220,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | Marketplace / Platform item ID | [default to &#39;7190770-1-2908&#39;] |
+| **capture_payment_request_body** | [**CapturePaymentRequestBody**](CapturePaymentRequestBody.md) |  |  |
 
 ### Return type
 
@@ -230,7 +232,7 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

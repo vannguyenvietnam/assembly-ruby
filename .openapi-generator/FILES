@@ -47,6 +47,7 @@ docs/CallbackResponsePayload.md
 docs/CallbackResponseResponse.md
 docs/Callbacks.md
 docs/CallbacksApi.md
+docs/CapturePaymentRequestBody.md
 docs/CardAccount.md
 docs/CardAccountCardAccounts.md
 docs/CardAccountCardAccountsCard.md
@@ -221,6 +222,7 @@ lib/assembly_ruby/models/callback_response.rb
 lib/assembly_ruby/models/callback_response_payload.rb
 lib/assembly_ruby/models/callback_response_response.rb
 lib/assembly_ruby/models/callbacks.rb
+lib/assembly_ruby/models/capture_payment_request_body.rb
 lib/assembly_ruby/models/card_account.rb
 lib/assembly_ruby/models/card_account_card_accounts.rb
 lib/assembly_ruby/models/card_account_card_accounts_card.rb
@@ -324,4 +326,5 @@ lib/assembly_ruby/models/withdraw_request_body.rb
 lib/assembly_ruby/version.rb
 spec/api_client_spec.rb
 spec/configuration_spec.rb
+spec/models/capture_payment_request_body_spec.rb
 spec/spec_helper.rb
